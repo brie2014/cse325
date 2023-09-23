@@ -307,7 +307,7 @@ namespace TimedMathQuiz
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(154, 20);
             this.dateLabel.TabIndex = 21;
-            this.dateLabel.Text = "23 September 2023";
+            this.dateLabel.Text = DateTime.Today.ToString("dd MMMM yyyy");
             // 
             // Form1
             // 
