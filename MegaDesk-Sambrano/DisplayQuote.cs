@@ -15,30 +15,28 @@ namespace MegaDesk_Sambrano
         public DisplayQuote(DeskQuote deskQuote)
         {
             InitializeComponent();
+            orderDateOutput.Text = DateTime.Today.ToString("dd MMMM yyyy");
             customerNameOutput.Text = deskQuote.CustomerName;
             widthOutput.Text = deskQuote.Desk.Width.ToString();
             depthOutput.Text = deskQuote.Desk.Depth.ToString();
             numOfDrawersOutput.Text = deskQuote.Desk.NumOfDrawers.ToString();
             materialOutput.Text = deskQuote.Desk.Material.ToString();
-            rushDaysOutput.Text = deskQuote.RushDays.ToString();
-            totalOutput.Text = deskQuote.calculateQuote().ToString();
+            if (deskQuote.ProductionDays == 14) RushDaysOutput.Text = "N/A";
+            else RushDaysOutput.Text = deskQuote.ProductionDays.ToString();
+            totalOutput.Text = "$" + deskQuote.calculateQuote().ToString();
         }
 
         private void mainMenu_Click(object sender, EventArgs e)
         {
-            MainMenu mainMenu = (MainMenu)Tag;
+            MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
             Close();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
-        private void DisplayQuote_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -39,7 +39,7 @@
             // addQuote
             // 
             this.addQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addQuote.Location = new System.Drawing.Point(22, 29);
+            this.addQuote.Location = new System.Drawing.Point(60, 74);
             this.addQuote.Name = "addQuote";
             this.addQuote.Size = new System.Drawing.Size(220, 66);
             this.addQuote.TabIndex = 0;
@@ -50,7 +50,7 @@
             // viewQuotes
             // 
             this.viewQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewQuotes.Location = new System.Drawing.Point(22, 112);
+            this.viewQuotes.Location = new System.Drawing.Point(60, 157);
             this.viewQuotes.Name = "viewQuotes";
             this.viewQuotes.Size = new System.Drawing.Size(220, 66);
             this.viewQuotes.TabIndex = 1;
@@ -61,7 +61,7 @@
             // exit
             // 
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(22, 275);
+            this.exit.Location = new System.Drawing.Point(60, 320);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(220, 66);
             this.exit.TabIndex = 3;
@@ -72,7 +72,7 @@
             // searchQuotes
             // 
             this.searchQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchQuotes.Location = new System.Drawing.Point(22, 193);
+            this.searchQuotes.Location = new System.Drawing.Point(60, 238);
             this.searchQuotes.Name = "searchQuotes";
             this.searchQuotes.Size = new System.Drawing.Size(220, 66);
             this.searchQuotes.TabIndex = 2;
@@ -83,9 +83,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MegaDesk_Sambrano.Properties.Resources.desk;
-            this.pictureBox1.Location = new System.Drawing.Point(272, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(335, 73);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 266);
+            this.pictureBox1.Size = new System.Drawing.Size(290, 313);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 375);
+            this.ClientSize = new System.Drawing.Size(682, 453);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.searchQuotes);

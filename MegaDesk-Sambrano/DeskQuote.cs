@@ -11,7 +11,7 @@ namespace MegaDesk_Sambrano
     {
         public string CustomerName { get; set; }
         public Desk Desk { get; set; }
-        public int RushDays { get; set; }
+        public int ProductionDays { get; set; }
 
         public int calculateQuote()
         {
@@ -55,7 +55,7 @@ namespace MegaDesk_Sambrano
 
              // calculate rush charge based on days and surface area
              int rushCharge = 0;
-            if (RushDays == 3)
+            if (ProductionDays == 3)
                 if (surfaceArea > 2000)
                     rushCharge = 80;
 
@@ -64,7 +64,7 @@ namespace MegaDesk_Sambrano
 
                 else rushCharge = 60;
 
-            if (RushDays == 5)
+            if (ProductionDays == 5)
                 if (surfaceArea > 2000)
                     rushCharge = 60;
 
@@ -73,7 +73,7 @@ namespace MegaDesk_Sambrano
 
                 else rushCharge = 40;
 
-            if (RushDays == 7)
+            if (ProductionDays == 7)
                 if (surfaceArea > 2000)
                     rushCharge = 40;
 
