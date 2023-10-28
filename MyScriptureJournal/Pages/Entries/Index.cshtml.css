@@ -1,0 +1,24 @@
+﻿body {
+
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.card-text {
+    font-family: 'Indie Flower', 'Lucida Handwriting';
+}
+
+.card-title, h1 {
+    font-family: 'Alfa Slab One';
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}

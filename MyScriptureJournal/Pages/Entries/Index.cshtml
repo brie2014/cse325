@@ -5,59 +5,61 @@
     ViewData["Title"] = "Entries";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<form>
-    <select asp-for="Book" asp-items="Model.Books">
-        <option value="">All</option>
-    </select>
-    <p>
-        Keyword: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
+<div class="flex-center m-2">
+    <h1 class="me-4">Journal Entries</h1>
+    <a id="add-new"class="btn btn-info" asp-page="Create">+ Add New</a>
+</div>
+<form class="container">
+    <div class="row g-4 align-items-end justify-content-start">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="input-group">
+                <div class="input-group-prepend col-3">
+                    <label class="input-group-text" for="Book">Book</label>
+                </div>
+                <select class="custom-select col-9" asp-for="Book" asp-items="Model.Books">
+                    <option value="">All</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="row g-4 align-items-end">
+                <div class="col-sm-12 col-md-8 form-group">
+                        <label class="control-label" for="SearchString">Keyword</label>
+                        <input class ="form-control col-md-12" type="text" asp-for="SearchString" />
+                </div>
+                <input class="btn btn-info col-sm-12 col-md-4" type="submit" value="Filter" />
+            </div>
+        </div>
+    </div>
 </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Book)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Reference)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Note)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Entry) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Book)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Reference)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="btn-group m-3" role="group">
+                <a class="btn btn-outline-info" asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    Sort By Date
+                </a>
+        <a class="btn btn-outline-info" asp-page="./Index" asp-route-sortOrder="@Model.BookSort">
+            Sort By Book
+        </a>
+
+        </div>
+<div class="container">
+    <div class="row g-3">
+        @foreach (var item in Model.Entry)
+        {
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">@Html.DisplayFor(modelItem => item.Book) @Html.DisplayFor(modelItem => item.Reference)</h2>
+                    <h3 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(modelItem => item.Date)</h3>
+                    <p class="card-text"> @Html.DisplayFor(modelItem => item.Note)</p>
+                    <div class="btn-group" role="group">
+                    <a class="card-link btn btn-outline-info" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                    <a class="card-link btn btn-outline-info" asp-page="./Details" asp-route-id="@item.ID">Details</a>
+                    <a class="card-link btn btn-outline-info" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
