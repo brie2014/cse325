@@ -29,9 +29,9 @@ namespace MvcMovie.Controllers
             }
 
             // Use LINQ to get list of genres.
-            IQueryable<Movie.MovieGenre> genreQuery = from m in _context.Movie
+            IQueryable<String> genreQuery = from m in _context.Movie
                                             orderby m.Genre
-                                            select m.Genre;
+                                            select m.Genre.ToString();
             var movies = from m in _context.Movie
                          select m;
 
@@ -42,7 +42,8 @@ namespace MvcMovie.Controllers
 
             if (!string.IsNullOrEmpty(movieGenre))
             {
-                movies = movies.Where(x => x.Genre.ToString() == movieGenre);
+                Movie.MovieGenre queryGenre = (Movie.MovieGenre)Enum.Parse(typeof(Movie.MovieGenre), value: movieGenre, ignoreCase: true);
+                movies = movies.Where(x => x.Genre == queryGenre);
             }
 
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
