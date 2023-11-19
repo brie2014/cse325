@@ -23,15 +23,28 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+body {
+    background-color: lightgrey;
+}
+ main {
+    font-family: 'Merriweather', Times, serif;
+}
+ .index-header, .navbar-brand {
+    font-family: 'Holtwood One SC', Times, serif;
+}
+ main p {
+    font-family: 'Montserrat', 'Arial Narrow', Arial, sans-serif;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 16px;
+    background-color: lightgrey;
 }
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
